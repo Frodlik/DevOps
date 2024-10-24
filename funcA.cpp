@@ -1,6 +1,6 @@
 #include "funcA.h"
 
-//Placeholder implementation that returns 0
 double FuncA::calculate() {
-	return 0;
+	// Sum of first 3 elements of the series
+	return 1 + x + pow(x, 2);
 }
