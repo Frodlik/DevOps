@@ -2,9 +2,9 @@ name: C++ CI with Make
 
 on:
   push:
-    branches: [branchMake]
+    branches: [branchAutomake]
   pull_request:
-    branches: [branchMake]
+    branches: [branchAutomake]
 
 jobs:
   build:
@@ -13,12 +13,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install build dependencies
+      - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y g++ make
+          sudo apt-get install -y autoconf automake g++
+
+      - name: Configure script
+        run: |
+          autoreconf --install
+        
+      - name: Configure
+        run: ./configure
+      
 
       - name: Build
         run: make
+
+      - name: Create distribution
+        run: make dist
+
+      - name: Upload tarball
+        uses: actions/upload-artifact@v4
+        with:
+          name: funca-dist
+          path: funca-*.tar.gz
         
         
