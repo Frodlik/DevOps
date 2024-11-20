@@ -4,7 +4,7 @@
 class FuncA {
 public:
 	//Function that returns 0
-	double calculate();
+	double calculate(int n, double x);
 };
 
 #endif
