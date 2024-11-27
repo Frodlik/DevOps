@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "funcA.h"
+#include "Timer.h"
 
 void test_calculate() {
     FuncA func;
@@ -28,11 +29,19 @@ void test_calculate() {
     x = 1.0;
     result = func.calculate(n, x);
     assert(result == 4.0);
+}
 
-    std::cout << "All tests passed!" << std::endl;
+void test_calculation_time() {
+    int iMS = calculateTime();
+
+    std::cout << "Calculation and sorting time: " << iMS << " milliseconds" << std::endl;
+
+    assert(iMS >= 5000 && iMS <= 20000);
 }
 
 int main() {
     test_calculate();
+    test_calculation_time();
+    std::cout << "All tests passed!" << std::endl;
     return 0;
 }
