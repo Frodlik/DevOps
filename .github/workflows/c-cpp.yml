@@ -2,9 +2,9 @@ name: C++ CI with Make
 
 on:
   push:
-    branches: [branchHTTPservMutli]
+    branches: [branchMKR]
   pull_request:
-    branches: [branchHTTPservMutli]
+    branches: [branchMKR]
 
 jobs:
   build:
