@@ -4,7 +4,7 @@
 IMAGE="frodlik/optimaserver:latest"
 CPU_THRESHOLD_BUSY=20        # CPU usage % threshold to consider a container "busy"
 CPU_THRESHOLD_IDLE=5         # CPU usage % threshold to consider a container "idle"
-CHECK_INTERVAL=60            # Check every 60 seconds
+CHECK_INTERVAL=30            # Check every 30 seconds
 CONSECUTIVE_THRESHOLD=2      # 2 consecutive checks for scaling decisions
 CONTAINERS=("srv1" "srv2" "srv3")
 CPU_SETS=("0" "1" "2")
